@@ -6,7 +6,7 @@
         width: 750px;
         margin: 0 auto;
     }
-    .slick-prev, .slick-next {
+    .prev, .next {
         position: absolute;
         top: 50%;
         left: -66px;
@@ -18,8 +18,29 @@
             height: 50px;
         }
     }
-    .slick-next {
+    .next {
         right: -66px;
         left: auto;
+    }
+    .tns-item { /* класс смотрим в консоли разработчика */
+        img { /* Выравниваем картинки по центру */
+            display: block;
+            margin: 0 auto; 
+        }
+    }
+    .tns-nav { /* В качестве примера стилизация точек */
+        display: block;
+        width: 130px;
+        margin: 0 auto;
+        button {
+            margin: 0 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: blue;
+        }
+        .tns-nav-active {
+            background-color: red;
+        }
     }
 }
