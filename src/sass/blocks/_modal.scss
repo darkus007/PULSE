@@ -1,0 +1,51 @@
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    /* не верно, прозрачно все содержиме контейнера */
+    /* opacity: 0.561;
+    background-color: #000; */
+    /* верно, прозрачен только фон */
+    background-color: rgba(0, 0, 0, .56);
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(242, 242, 242);
+    width: 380px;
+    min-height: 400px;
+    padding: 38px 40px 40px 40px;
+    &__close  {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        font-size: 41px;
+        line-height: 21px;
+        color: $main-color;
+        cursor: pointer;
+    }
+    &__subtitle {
+        font-size: 18px;
+        color: rgb(13, 13, 13);
+        text-align: center;
+        font-weight: 700;
+    }
+    &__descr {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(13, 13, 13);
+        text-align: center;
+    }
+    &_mini {
+        min-height: 140px;
+    }
+}
+
+#consultation, #order, #thanks {
+    display: none;
+}
