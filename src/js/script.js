@@ -108,4 +108,32 @@ $(document).ready(function(){
             $('.overlay, #order').fadeIn('slow');
         })
     });
+
+
+    // Валидация форм использую jQuery *************************************************
+    //$('.feed-form').validate(); // работает только на первом элементе с селектором '.feed-form'
+    // https://jqueryvalidation.org/category/plugin/
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                name: "required", // получаем из идентификатора name="name"
+                phone: "required", // получаем из идентификатора name="phone"
+                email: {            // получаем из идентификатора name="email"
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: "Пожалуйста, введите свое имя",
+                phone: "Пожалуйста, введите свой номер телефона",
+                email: {
+                    required: "Пожалуйста, введите свой почтовый адрес",
+                    email: "Неправильно введен адрес почты"
+                }
+            }
+        }); 
+    };
+    validateForms('#consultation-form');
+    validateForms('#consultation form');
+    validateForms('#order form');
 });
