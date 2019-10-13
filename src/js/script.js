@@ -81,4 +81,31 @@ $(document).ready(function(){
     };
     toggleSlide('.catalog-item__link');
     toggleSlide('.catalog-item__back');
+
+
+    /* Пишем скрипты для модальных окон используя jQuery *************************************************/
+    /* data-modal="consultation" - так можно в HTML задавать атрибуты для нужных компонентов */
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('slow'); // делаем элементы видимыми
+    });
+
+    // пишем код для крестика закрывающего модальные окна
+    $('.modal__close').on('click', function() {
+        $('.overlay, #consultation, #order, #thanks').fadeOut('slow');
+    });
+
+    // для моодального окна купить
+    /* $('.button_mini').on('click', function() {
+        $('.overlay, #order').fadeIn('slow'); // делаем элементы видимыми
+    }); */
+
+    // для моодального окна купить с подстановкой товара в окно
+    // text() - как читает. так и записывает 
+    // eq(i) - обращается к i-тому элементу
+    $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
+            $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn('slow');
+        })
+    });
 });
