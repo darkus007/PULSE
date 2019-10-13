@@ -1,0 +1,182 @@
+.catalog {
+    padding-bottom: 100px;
+    &__tabs {
+        margin-top: 69px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        padding-left: 0;
+    }
+    &__tab {
+        margin: 0 5px;
+        width: 220px;
+        height: 50px;
+        border: solid 2px #d0d0d0;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        line-height: 48px;
+        color: #6b6b6b;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: 0.5s all;
+        transform: skewX(-25deg);
+        div {
+            transform: skewX(25deg);
+        }
+        &:hover {
+            box-shadow: 3px 3px 20px $main-color; /* тень смещение по X, Y, размытие. цвет тени */
+            border: none;
+        }
+        &_active {
+            background-color: $main-color;
+            color: #ffffff;
+        }
+    }
+    &__content {
+        margin-top: 60px;
+        display: none;
+        justify-content: space-between;
+        flex-wrap: wrap; /* непомещающиеся карточки на новую строку */
+        &_active {
+            display: flex;
+        }
+    }
+    &-item {
+        width: 300px;
+        min-height: 440px;
+        border: solid 2px #e8e8e8;
+        background-color: #ffffff;
+        padding: 20px 20px 26px 20px;
+        margin-bottom: 20px;
+        overflow: hidden; /* скрывает элементы выходящие за блок */
+        &__img {
+            max-width: 100%; /* при замене картинки она будет хорошо отображаься */
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+        &__subtitle {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #0d0d0d;
+        }
+        &__descr {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #0d0d0d;
+        }
+        &__link {
+            display: block;
+            margin-top: 17px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            text-transform: uppercase;
+            color: $main-color;
+            text-decoration: underline;
+            &:hover {
+                color: $main-color;
+            }
+        }
+        hr {
+            margin-top: 19px;
+            margin-bottom: 21px;
+            height: 1px; /* - так не получится, она будет 2px*/
+            /* border-bottom: none; */ /* так получится */
+            background-color: #e8e8e8;
+        }
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__old-price {
+            font-size: 14px;
+            font-weight: 300;
+            text-decoration: line-through; /* зачеркивает текст */
+            color: #555555;
+        }
+        &__price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #050505;
+        }
+        /* Пишем слайдер */
+        &__wrapper {
+            display: flex;
+            width: calc(200% + 40px);
+        }
+        &__content {
+            width: 50%;
+            margin-right: 0px;
+            transform: translateX(-100%);
+            transition: 0.5s all;
+            &_active {
+                transform: translateX(0%);
+                margin-right: 20px;
+            }
+        }
+        &__list {
+            position: relative;
+            width: 50%;
+            margin-left: 20px;
+            padding-right: 20px;
+            transition: 0.5s all;
+            padding-left: 19px;
+            margin-bottom: 0;
+            list-style-type: none; /* убираем идентификаторы в ul */
+            transform: translateX(0%);
+            &_active {
+                transform: translateX(-100%);
+                margin-left: 0px;
+            }
+        }
+        li {
+            position: relative;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #555555;
+            margin-bottom: 20px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 6px;
+                width: 5px;
+                height: 5px;
+                background-color: $main-color;
+
+            }
+        }
+        &__back {
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: $main-color;
+            text-decoration: underline;
+            &:hover {
+                color: $main-color;
+            }
+        }
+    }
+}
