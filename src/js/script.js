@@ -136,4 +136,8 @@ $(document).ready(function(){
     validateForms('#consultation-form');
     validateForms('#consultation form');
     validateForms('#order form');
+
+
+    // Применеие масок ввода используя jQuery ************************************
+    $('input[name=phone]').mask("+7 (999) 999-99-99"); // для его работы необходимо убрать type="number" в HTML коде
 });
