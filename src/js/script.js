@@ -161,4 +161,24 @@ $(document).ready(function(){
         });
         return false;                               // так надо...
     });
+
+
+    // Стрелка возврата в начало страницы *****************************************
+    // window - все наше окно браузера
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+
+    // Плавная прокрутка от ссылки до места куда она ссылается, работает не только со стрелкой, н и со всеми ссылками
+    // Для работы должна быть подключена библиотека jQuery.
+    $("a[href^='#']").click(function(){
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
+
 });
