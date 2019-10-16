@@ -129,7 +129,7 @@
                 margin-right: 20px;
             }
         }
-        &__list {
+        &__details {
             position: relative;
             width: 50%;
             margin-left: 20px;
@@ -137,12 +137,15 @@
             transition: 0.5s all;
             padding-left: 19px;
             margin-bottom: 0;
-            list-style-type: none; /* убираем идентификаторы в ul */
             transform: translateX(0%);
             &_active {
                 transform: translateX(-100%);
                 margin-left: 0px;
             }
+        }
+        &__list {
+            list-style-type: none; /* убираем идентификаторы в ul */
+            padding-left: 0;
         }
         li {
             position: relative;

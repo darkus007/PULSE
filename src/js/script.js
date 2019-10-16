@@ -75,7 +75,7 @@ $(document).ready(function(){
             $(this).on('click', function(e) {
                 e.preventDefault();
                 $('.catalog-item__content').eq(i).toggleClass('catalog-item__content_active');
-                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
+                $('.catalog-item__details').eq(i).toggleClass('catalog-item__details_active');
             })
         })
     };
@@ -173,9 +173,16 @@ $(document).ready(function(){
         }
     });
 
+    
+    
     // Плавная прокрутка от ссылки до места куда она ссылается, работает не только со стрелкой, н и со всеми ссылками
     // Для работы должна быть подключена библиотека jQuery.
-    $("a[href^='#']").click(function(){
+    // $("a[href^='#']").click(function(){
+
+    // для валидации формы и исключения ошибок в консоле, переписываем первую строку 
+    // на действие по конкретной ссылке с "up":
+    
+    $("a[href='#up']").click(function(){
         const _href = $(this).attr("href");
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
         return false;
