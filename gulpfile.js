@@ -44,33 +44,33 @@ gulp.task('watch', function() {
 gulp.task('html', function() {
     return gulp.src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('distr'));
 });
 
 gulp.task('scripts', function() {
     return gulp.src("src/js/**/*.js")
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('distr/js'));
 });
 
 gulp.task('fonts', function() {
     return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest('dist/fonts'));
+        .pipe(gulp.dest('distr/fonts'));
 });
 
 gulp.task('icons', function() {
     return gulp.src("src/icons/**/*")
-        .pipe(gulp.dest('dist/icons'));
+        .pipe(gulp.dest('distr/icons'));
 });
 
 gulp.task('mailer', function() {
     return gulp.src("src/mailer/**/*")
-        .pipe(gulp.dest('dist/mailer'));
+        .pipe(gulp.dest('distr/mailer'));
 });
 
 gulp.task('images', function() {
-    return gulp.src("src/images/**/*")
+    return gulp.src("src/img/**/*")
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('distr/img'));
 });
 
 
